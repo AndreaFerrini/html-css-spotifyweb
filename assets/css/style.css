@@ -42,6 +42,32 @@ body {
 #aside-bottom img:first-child {
     height: 15px;
 }
+/* test */
+.asidebar .navigation {
+    display: none;
+}
+.asidebar .navigation ul {
+    list-style: none;
+    margin-top: 10px;
+    color: white;
+}
+.asidebar .navigation ul li {
+    padding: 10px 0;
+    text-decoration: none;
+    color: rgb(163,163,163);
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 1.25rem;
+}
+.asidebar .navigation h3 {
+    color: white;
+    font-size: larger;
+    margin-top: 20px;
+    padding-left: 1.25rem;
+}
+.fa-plus-square {
+    font-size: 28px;
+}
 /* main */
 .mainarea {
     width: calc(100% - 80px);
@@ -220,7 +246,7 @@ a {
 }
 
 /* tablet */
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 768px) {
     #recenti .album {
         flex-basis: calc(100% / 4);
     }
@@ -228,11 +254,17 @@ a {
         justify-content: flex-start;
         gap: 2%;
     }
+    .asidebar .navigation {
+        display: block;
+    }
 }
 
 /* desktop */
 @media only screen and (min-width: 1024px) {
     #recenti .album {
         flex-basis: calc(100% / 6);
+    }
+    .asidebar .navigation {
+        display: block;
     }
 }
