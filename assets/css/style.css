@@ -15,11 +15,11 @@ body {
 .top-area {
     height: calc(100% - 90px);
     display: flex;
+    overflow: hidden;
 }
 /* barra laterale */
 .asidebar {
-    height: 100%;
-    width: 80px;
+    min-height: 450px;
     background-color: black;
 }
 #aside-top {
@@ -47,6 +47,7 @@ body {
     width: calc(100% - 80px);
     height: 100%;
     background-color: rgb(20,25,34);
+    overflow: hidden;
 }
 .navbar {
     position: fixed;
@@ -69,6 +70,91 @@ a {
 .navbar .button:hover {
     opacity: 1;
 }
+/* sottonav */
+.mainarea .sottonav {
+    margin-top: 100px;
+}
+.mainarea .sottonav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.mainarea .sottonav ul li {
+    margin: 0 1.5rem;
+    list-style-type: none;
+}
+.mainarea .sottonav ul li a {
+    position: relative;
+}
+.mainarea .sottonav ul li:hover a {
+    opacity: 1;
+}
+.mainarea .sottonav ul li .active::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    width: 90%;
+    background-color: rgb(109,159,42);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mainarea .sottonav ul li a {
+    opacity: 0.6;
+    color: white;
+}
+/* albums */
+#recenti {
+    padding: 2rem;
+}
+#recenti .albums {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#recenti h2 {
+    color: white;
+    margin-bottom: 2rem;
+}
+#recenti .album {
+    flex-basis: calc(100% / 2 - 1%);
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+#recenti .album img {
+    width: 100%;
+}
+#recenti .album h5 {
+    padding-top: 0.5rem;
+}
+#recenti .album h6 {
+    color: rgb(103,106,112);
+    padding-top: 0.5rem;
+}
+#recenti .album .img-container {
+    position: relative;
+}
+#recenti .album .img-container i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    display: none;
+}
+#recenti .album:hover .img-container i {
+    display: block;
+    cursor: pointer;
+}
+#popular-artist .album img {
+    object-fit: cover;
+    display: inline-block;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
 /* footer */
 .bottom-area {
     height: 90px;
@@ -78,6 +164,7 @@ a {
     align-items: center;
     padding: 15px;
     color: white;
+    position: relative;
 }
 #bottom-col-left {
     display: flex;
@@ -93,6 +180,30 @@ a {
     margin: 1rem;
     font-size: 10px;
 }
+#bottom-center-controllers {
+    display: flex;
+    justify-content: center;
+}
+#bottom-center-controllers i {
+    margin: 0 1.5rem;
+}
+#bottom-center-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bottom-center-time .time-bg{
+    background-color: rgb(90,90,90);
+    height: 5px;
+    width: 80%;
+    border-radius: 10px;
+}
+#bottom-center-time .time{
+    background-color: rgb(193,193,193);
+    height: 5px;
+    width: 20%;
+    border-radius: 10px;
+}
 /*  */
 /* MEDIA */
 /*  */
@@ -105,5 +216,23 @@ a {
     }
     .navbar {
         width: calc(100% - 250px);
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 780px) {
+    #recenti .album {
+        flex-basis: calc(100% / 4);
+    }
+    #recenti .albums {
+        justify-content: flex-start;
+        gap: 2%;
+    }
+}
+
+/* desktop */
+@media only screen and (min-width: 1024px) {
+    #recenti .album {
+        flex-basis: calc(100% / 6);
     }
 }
