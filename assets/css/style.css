@@ -38,6 +38,12 @@ body {
 #aside-top img:hover {
     opacity: 1;
 }
+#aside-top .logo {
+    display: none;
+}
+#aside-top .logo-xs {
+    display: block;
+}
 #aside-bottom {
     height: 90px;
 }
@@ -285,6 +291,12 @@ a {
     .preferiti {
         flex-direction: column;
     }
+    #aside-top .logo {
+        display: block;
+    }
+    #aside-top .logo-xs {
+        display: none;
+    }
 }
 
 /* desktop */
@@ -297,5 +309,11 @@ a {
     }
     .preferiti {
         flex-direction: column;
+    }
+    #aside-top .logo {
+        display: block;
+    }
+    #aside-top .logo-xs {
+        display: none;
     }
 }
